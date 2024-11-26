@@ -1,0 +1,125 @@
+.flex__item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.detail {
+    margin: 0 20px;
+    padding-top: 20px;
+    width: 50%;
+}
+
+.detail__content {
+    width: 100%;
+}
+
+.detail__header {
+    display: flex;
+    align-items: center;
+}
+
+.back-button {
+    background: #fff;
+}
+
+.detail__name {
+    margin-left: 20px;
+}
+
+.detail__img img {
+    width: 100%;
+}
+
+.detail__card__content-tags {
+    margin-top: 20px;
+}
+
+.detail__card__content-tag-item {
+    display: inline-block;
+}
+
+.detail__text {}
+
+.reserve-form {
+    background: blue;
+    width: 50%;
+    box-shadow: 2px 2px;
+    margin-right: 20px;
+    padding-top: 20px;
+}
+
+.reserve-form__ttl {
+    color: #fff;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.detail__form {
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.detail__form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail__form-input {
+    margin: 10px 20px;
+}
+
+.reserve-confirm {
+    background: rgba(0,0,255,0.5);
+    margin: 10px 20px;
+}
+
+.reserve-confirm__table {
+    margin: 10px 60px 10px 20px;
+    color: #fff;
+}
+
+.reserve-confirm__colspan {
+    padding-bottom: 10px;
+}
+
+.reserve-confirm__label {
+    padding-right: 20px;
+}
+
+.reserve-confirm__data {
+    padding-left: 20px;
+}
+
+.reserve__button {
+    position: absolute;
+    width: 100%;
+    background: skyblue;
+    color: white;
+    padding: 15px 0;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+
+    .flex__item {
+        width: 100%;
+        display: block;
+    }
+
+    .detail {
+        margin: 0 20px;
+        padding-top: 20px;
+        width: 95%;
+    }
+
+    .reserve-form {
+        background: blue;
+        box-shadow: 2px 2px;
+        margin: 40px 20px;
+        padding-top: 20px;
+        width: 95%;
+    }
+}

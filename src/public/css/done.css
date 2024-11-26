@@ -1,0 +1,22 @@
+.done {
+    border: 1px solid #000;
+    width: 350px;
+    text-align: center;
+}
+
+.done-inner {
+    margin-top: 50px;
+}
+
+.done-message {
+    border: none;
+}
+
+.done-form {
+    margin: 50px 0 50px 0;
+}
+
+.done__button {
+    background: blue;
+    color: #fff;
+}

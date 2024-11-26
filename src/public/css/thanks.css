@@ -1,0 +1,22 @@
+.thanks {
+    border: 1px solid #000;
+    width: 350px;
+    text-align: center;
+}
+
+.thanks-inner {
+    margin-top: 50px;
+}
+
+.thanks-message {
+    border: none;
+}
+
+.thanks-form {
+    margin: 50px 0 50px 0;
+}
+
+.thanks__button {
+    background: blue;
+    color: #fff;
+}
