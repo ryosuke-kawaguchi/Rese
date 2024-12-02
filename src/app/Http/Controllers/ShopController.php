@@ -47,6 +47,8 @@ class ShopController extends Controller
 
         $shop = collect($shops)->firstWhere('id',$id);
 
+        $shop['img'] = asset($shop['img']);
+
         return view('detail',['shop'=> $shop]);
     }
 }

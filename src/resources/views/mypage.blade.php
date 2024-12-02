@@ -8,6 +8,18 @@
 <div class="mypage">
     <div class="reserve">
         <h2 class="reserve__title">予約状況</h2>
+        @if (session('success__delete'))
+            <div class="alert alert-success">
+                {{ session('success__delete') }}
+            </div>
+        @endif
+
+        @if (session('success__update'))
+            <div class="alert alert-success">
+                {{ session('success__update') }}
+            </div>
+        @endif
+
         @foreach($reserves as $reserve)
             <div class="reserve-status">
                 <div class="reserve-header">

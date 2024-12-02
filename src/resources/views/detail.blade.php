@@ -8,14 +8,13 @@
 <div class="flex__item">
 <div class="detail">
     <div class="detail__content">
-
         <div class="detail__header">
             <a href="/" class="back-button"><i class="material-icons">arrow_back_ios</i></a>
             <h1 class="detail__name">{{ $shop['name'] }}</h1>
         </div>
 
         <div class="detail__img">
-            <img src="{{ $shop['img'] }}" alt="店舗">
+            <img src="{{$shop['img']}}" alt="{{$shop['name']}}">
         </div>
         <div class="detail__card__content-tags">
             <p class="detail__card__content-tag-item">#{{ $shop['area'] }}</p>

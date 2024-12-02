@@ -31,7 +31,7 @@ class ReserveController extends Controller
     {
         $reserve = Reserve::findOrFail($id);
         $reserve->delete();
-        return redirect()->route('mypage')->with('success', '予約を削除しました。');
+        return redirect()->back()->with('success__delete', '予約を削除しました。');
     }
 
     public function showDone()
@@ -55,6 +55,6 @@ class ReserveController extends Controller
             'time' => $request->input('time'),
             'member' => $request->input('member'),
         ]);
-        return redirect()->back()->with('success', '予約情報を更新しました。');
+        return redirect()->back()->with('success__update', '予約情報を更新しました。');
     }
 }
