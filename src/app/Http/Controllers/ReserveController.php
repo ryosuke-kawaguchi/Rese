@@ -6,17 +6,12 @@ use App\Models\Reserve;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ReserveRequest;
 
 class ReserveController extends Controller
 {
-    public function storeReservation(Request $request)
+    public function storeReservation(ReserveRequest $request)
     {
-        $request->validate([
-            'date' => 'required|date',
-            'time' => 'required',
-            'member' => 'required|integer|min:1',
-            'shop_name' => 'required|string',
-        ]);
         $reserve = Reserve::create([
             'user_id' => Auth::id(),
             'shop_name' => $request->input('shop_name'),

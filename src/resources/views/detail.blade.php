@@ -28,9 +28,18 @@
         <form action="{{ route('reserve.store') }}" method="post" class="detail__form" onsubmit="return confirm('こちらの予約内容でよろしいでしょうか？');">
             @csrf
             <div class="detail__form-group">
-                <input type="date" name="date" id="dateInput" value="{{ date('Y-m-d') }}" class="detail__form-input">
-                <input type="time" name="time" id="timeInput" step="1800" value="17:30" class="detail__form-input">
+                <input type="date" name="date" id="dateInput" value="" class="detail__form-input">
+                @error('date')
+                    <div class="error-message">{{ $message }}</div>
+                @enderror
+                <input type="time" name="time" id="timeInput" step="1800" value="" class="detail__form-input">
+                @error('time')
+                    <div class="error-message">{{ $message }}</div>
+                @enderror
                 <input type="number" name="member" id="numberInput" min="1" value="1人" class="detail__form-input">
+                @error('member')
+                    <div class="error-message">{{ $message }}</div>
+                @enderror
                 <input type="hidden" name="shop_name" value="{{ $shop['name'] }}">
             </div>
             <div class="reserve-confirm">

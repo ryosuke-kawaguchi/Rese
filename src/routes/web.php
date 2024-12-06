@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReserveController;
+use App\Http\Controllers\MailController;
 
 Route::controller(ShopController::class)->group(function(){
     Route::get('/', 'index');
@@ -27,4 +28,3 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/thanks',function() {
     return view('thanks');
 })->name('thanks');
-
