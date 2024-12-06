@@ -28,8 +28,6 @@
     justify-content: space-between;
 }
 
-.shop__name {}
-
 .shop-card__content-tags {
     display: flex;
     gap: 8px;
