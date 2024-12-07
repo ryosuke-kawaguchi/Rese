@@ -7,6 +7,7 @@ use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ReserveRequest;
+use App\Http\Requests\ReserveUpdateRequest;
 
 class ReserveController extends Controller
 {
@@ -19,6 +20,7 @@ class ReserveController extends Controller
             'time' => $request->input('time'),
             'member' => $request->input('member'),
         ]);
+
         return redirect()->route('done')->with('reserve', $reserve);
     }
 
@@ -26,30 +28,22 @@ class ReserveController extends Controller
     {
         $reserve = Reserve::findOrFail($id);
         $reserve->delete();
+
         return redirect()->back()->with('success__delete', '予約を削除しました。');
     }
 
     public function showDone()
     {
         $reserve = session('reserve');
+
         return view('done', compact('reserve'));
     }
 
-    public function update(Request $request, $id)
+    public function update(ReserveUpdateRequest $request, $id)
     {
-        $request->validate([
-            'shop_name' => 'required|string|max:255',
-            'date' => 'required|date',
-            'time' => 'required',
-            'member' => 'required|integer|min:1',
-        ]);
         $reserve = Reserve::findOrFail($id);
-        $reserve->update([
-            'shop_name' => $request->input('shop_name'),
-            'date' => $request->input('date'),
-            'time' => $request->input('time'),
-            'member' => $request->input('member'),
-        ]);
+        $reserve->update($request->validated());
+
         return redirect()->back()->with('success__update', '予約情報を更新しました。');
     }
 }

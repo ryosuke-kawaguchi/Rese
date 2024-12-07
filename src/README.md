@@ -63,7 +63,7 @@ favoritesテーブル
 |updated_id||timestamp|  |  |  |  |
 
 ## ER図
-![ER図](docs/er-diagram.png)
+![ER図](docs/id.drawio.png)
 
 ## 環境構築
 #### 1. 下記の構造でディレクトリを作成

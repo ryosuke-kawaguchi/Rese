@@ -31,6 +31,7 @@ class FavoriteController extends Controller
     {
         $favorites = Favorite::where('user_id', Auth::id())->pluck('shop_id')->toArray();
         $reserves = Reserve::where('user_id', Auth::id())->get();
+        
         return view('mypage', compact('favorites', 'reserves'));
     }
 }

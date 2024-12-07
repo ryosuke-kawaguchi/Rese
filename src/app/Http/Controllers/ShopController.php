@@ -44,9 +44,7 @@ class ShopController extends Controller
     public function detail($id)
     {
         $shops = config('shop-data.shop');
-
         $shop = collect($shops)->firstWhere('id',$id);
-
         $shop['img'] = asset($shop['img']);
 
         return view('detail',['shop'=> $shop]);
