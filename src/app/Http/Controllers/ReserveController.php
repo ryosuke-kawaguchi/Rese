@@ -11,7 +11,7 @@ use App\Http\Requests\ReserveUpdateRequest;
 
 class ReserveController extends Controller
 {
-    public function storeReservation(ReserveRequest $request)
+    public function store(ReserveRequest $request)
     {
         $reserve = Reserve::create([
             'user_id' => Auth::id(),
@@ -32,7 +32,7 @@ class ReserveController extends Controller
         return redirect()->back()->with('success__delete', '予約を削除しました。');
     }
 
-    public function showDone()
+    public function show()
     {
         $reserve = session('reserve');
 

@@ -17,8 +17,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/mypage', 'index')->name('mypage');
     });
     Route::controller(ReserveController::class)->group(function(){
-        Route::post('/reserve', 'storeReservation')->name('reserve.store');
-        Route::get('/done', 'showDone')->name('done');
+        Route::post('/reserve', 'store')->name('reserve.store');
+        Route::get('/done', 'show')->name('done');
         Route::delete('/reserve/{id}', 'destroy')->name('reserve.destroy');
         Route::put('/reserve/{id}', 'update')->name('reserve.update');
     });

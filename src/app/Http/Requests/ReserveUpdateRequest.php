@@ -24,7 +24,7 @@ class ReserveUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'shop_name' => 'required|string|max:255',
+            'shop_name' => 'required|string|',
             'date' => 'required|date',
             'time' => 'required',
             'member' => 'required|integer|min:1',
